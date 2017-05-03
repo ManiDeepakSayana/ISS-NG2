@@ -1,0 +1,50 @@
+<md-toolbar color="primary">
+
+	<i class="material-icons">location_on</i>&nbsp; International Space Station Tracker
+
+	<span class="app-toolbar-filler"></span>
+
+</md-toolbar>
+<div class="app-content">
+
+	<md-grid-list cols="4" rowHeight="500px">
+		<md-grid-tile [colspan]="3" [rowspan]="1">
+			<md-card>
+				<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="5">
+					<sebm-google-map-marker [latitude]="lat" [longitude]="lng" [iconUrl]="'/assets/iss.png'"></sebm-google-map-marker>
+				</sebm-google-map>
+			</md-card>
+		</md-grid-tile>
+		<md-grid-tile [colspan]="1" [rowspan]="1">
+			<md-card>
+				<md-list>
+					<h3 md-subheader>ISS Info</h3>
+					<md-list-item>
+						<md-icon md-list-icon>room</md-icon>
+						<h4 md-line>Location</h4>
+						<p md-line> Latitude :{{lat}} </p>
+						<p md-line> Longitude :{{lng}} </p>
+					</md-list-item>
+					<md-list-item>
+						<md-icon md-list-icon>flight_takeoff</md-icon>
+						<h4 md-line>Altitude</h4>
+						<p md-line> {{altitude}} </p>
+					</md-list-item>
+					<md-list-item>
+						<md-icon md-list-icon>slow_motion_video</md-icon>
+						<h4 md-line>Velocity</h4>
+						<p md-line> {{velocity}} </p>
+					</md-list-item>
+					<md-list-item>
+						<md-icon md-list-icon>visibility</md-icon>
+						<h4 md-line>Visibility</h4>
+						<p md-line> {{visibility}} </p>
+					</md-list-item>
+					<md-divider></md-divider>
+				</md-list>
+			</md-card>
+		</md-grid-tile>
+	</md-grid-list>
+
+
+</div>
